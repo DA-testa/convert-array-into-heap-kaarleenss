@@ -7,11 +7,10 @@ def build_heap(data):
     # try to achieve  O(n) and not O(n2)
     i = len(data)
     while(i > 0):
-        if data[i] > data[i+1]:
-            data[i] = data[i+1]
-            swaps.append(i)
-        elif data[i] < data[i+1]:
-            data[i] = data[i]
+        if data[i // 2] > data[i]:
+            data[i], data[i // 2] = data[i // 2], data[i]
+            swaps.append((i, i // 2))
+        
         
             
 
