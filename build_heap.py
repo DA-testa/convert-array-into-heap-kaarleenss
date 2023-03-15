@@ -14,24 +14,23 @@ def build_heap(data, n):
                 a = a // 2
                 if a <= 1:
                     break
-        except IndexError: 
+        except IndexError:
             pass
-   
+
     return swaps
 
 
 def main():
-    
+
     # TODO : add input and corresponding checks
-    # add another input for I or F 
+    # add another input for I or F
     burts = input()
-    data=[]
+    data = []
     n = 0
     if burts == "I":
-    # first two tests are from keyboard, third test is from a file
+        # first two tests are from keyboard, third test is from a file
 
-
-    # input from keyboard
+        # input from keyboard
         n = int(input())
         data = list(map(int, input().split()))
 
@@ -41,20 +40,17 @@ def main():
         with open(path, "r") as file:
             content = file.readlines()
         n = int(content[0].replace('\n', ''))
-        data = list(map(int, content[1].replace('\n','').split(" ")))
-    
-
+        data = list(map(int, content[1].replace('\n', '').split(" ")))
 
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
 
-    # calls function to assess the data 
+    # calls function to assess the data
     # and give back all swaps
     swaps = build_heap(data, n)
 
-    # TODO: output how many swaps were made, 
+    # TODO: output how many swaps were made,
     # this number should be less than 4n (less than 4*len(data))
-
 
     # output all swaps
     print(len(swaps))
