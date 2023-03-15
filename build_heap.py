@@ -9,22 +9,22 @@ def build_heap(data, n):
         # print(i)
         try:
             while(data[(a // 2) - 1] > data[a - 1]):
-                    data[(a // 2) - 1], data[a - 1] = data[a - 1], data[(a // 2) - 1]
-                    swaps.append(((a // 2) - 1, a - 1))
-                    a = a // 2
-                    if a <= 1:
-                        break
+                data[(a // 2) - 1], data[a - 1] = data[a - 1], data[(a // 2) - 1]
+                swaps.append(((a // 2) - 1, a - 1))
+                a = a // 2
+                if a <= 1:
+                    break
         except IndexError: 
             pass
     for a in range(n, 1, -1):
         # print(i)
         try:
             while(data[(a // 2) - 1] > data[a - 1]):
-                    data[(a // 2) - 1], data[a - 1] = data[a - 1], data[(a // 2) - 1]
-                    swaps.append(((a // 2) - 1, a - 1))
-                    a = a // 2
-                    if a <= 1:
-                        break
+                data[(a // 2) - 1], data[a - 1] = data[a - 1], data[(a // 2) - 1]
+                swaps.append(((a // 2) - 1, a - 1))
+                a = a // 2
+                if a <= 1:
+                    break
         except IndexError: 
             pass
         
