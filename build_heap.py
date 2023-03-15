@@ -1,19 +1,23 @@
 # python3
 
 
-def build_heap(data):
+def build_heap(data, n):
     swaps = []
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
-    i = len(data)
-    while(i > 0):
-        if data[i // 2] > data[i]:
-            data[i], data[i // 2] = data[i // 2], data[i]
-            swaps.append((i, i // 2))
+    for j in range(n , 0, -1):
+        # print(i)
+        try:
+            while(data[j - 1] <= data[(j // 2) - 1]):
+                if j > 1:
+                    data[(j // 2) - 1], data[j - 1] = data[j - 1], data[(j // 2) - 1]
+                    swaps.append(((j // 2) - 1, j - 1))
+                    j = n // 2
+                else:
+                    break
+        except IndexError: 
+            pass
         
-        
-            
-
     return swaps
 
 
@@ -36,7 +40,7 @@ def main():
         with open(path) as file:
             content = file.readlines()
         n = int(content[0].replace('\n', ''))
-        data = content[1].replace('\n','').split(" ")
+        data = map(int, content[1].replace('\n','').split(" "))
     
 
 
@@ -45,7 +49,7 @@ def main():
 
     # calls function to assess the data 
     # and give back all swaps
-    swaps = build_heap(data)
+    swaps = build_heap(data, n)
 
     # TODO: output how many swaps were made, 
     # this number should be less than 4n (less than 4*len(data))
