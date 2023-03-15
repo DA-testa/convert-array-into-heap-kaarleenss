@@ -5,16 +5,26 @@ def build_heap(data, n):
     swaps = []
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
-    for j in range(n , 0, -1):
+    for a in range(n, 1, -1):
         # print(i)
         try:
-            while(data[j - 1] <= data[(j // 2) - 1]):
-                if j > 1:
-                    data[(j // 2) - 1], data[j - 1] = data[j - 1], data[(j // 2) - 1]
-                    swaps.append(((j // 2) - 1, j - 1))
-                    j = n // 2
-                else:
-                    break
+            while(data[(a // 2) - 1] > data[a - 1]):
+                    data[(a // 2) - 1], data[a - 1] = data[a - 1], data[(a // 2) - 1]
+                    swaps.append(((a // 2) - 1, a - 1))
+                    a = a // 2
+                    if a <= 1:
+                        break
+        except IndexError: 
+            pass
+    for a in range(n, 1, -1):
+        # print(i)
+        try:
+            while(data[(a // 2) - 1] > data[a - 1]):
+                    data[(a // 2) - 1], data[a - 1] = data[a - 1], data[(a // 2) - 1]
+                    swaps.append(((a // 2) - 1, a - 1))
+                    a = a // 2
+                    if a <= 1:
+                        break
         except IndexError: 
             pass
         
