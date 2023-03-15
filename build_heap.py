@@ -40,12 +40,12 @@ def main():
         with open(path) as file:
             content = file.readlines()
         n = int(content[0].replace('\n', ''))
-        data = map(int, content[1].replace('\n','').split(" "))
+        data = list(map(int, content[1].replace('\n','').split(" ")))
     
 
 
     # checks if lenght of data is the same as the said lenght
-    # assert len(data) == n
+    assert len(data) == n
 
     # calls function to assess the data 
     # and give back all swaps
