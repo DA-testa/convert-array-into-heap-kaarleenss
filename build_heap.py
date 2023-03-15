@@ -25,6 +25,7 @@ def main():
     # TODO : add input and corresponding checks
     # add another input for I or F 
     burts = input()
+    data=[]
     if burts == "I":
     # first two tests are from keyboard, third test is from a file
 
